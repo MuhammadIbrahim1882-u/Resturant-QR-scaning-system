@@ -1,0 +1,23 @@
+{
+  "name": "restaurant-qr-ordering-system",
+  "version": "1.0.0",
+  "description": "QR-code table ordering system for restaurants - customers order from their phone, kitchen sees orders live, no waiter needed to take orders.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "generate-qr": "node generate-qr.js"
+  },
+  "keywords": ["restaurant", "qr-code", "ordering", "kitchen-display"],
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5",
+    "cors": "^2.8.5",
+    "uuid": "^9.0.1",
+    "qrcode": "^1.5.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

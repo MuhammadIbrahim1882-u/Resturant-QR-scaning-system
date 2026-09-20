@@ -1,0 +1,14 @@
+[
+  { "id": "1", "label": "Table 1", "status": "free" },
+  { "id": "2", "label": "Table 2", "status": "free" },
+  { "id": "3", "label": "Table 3", "status": "free" },
+  { "id": "4", "label": "Table 4", "status": "free" },
+  { "id": "5", "label": "Table 5", "status": "free" },
+  { "id": "6", "label": "Table 6", "status": "free" },
+  { "id": "7", "label": "Table 7", "status": "free" },
+  { "id": "8", "label": "Table 8", "status": "free" },
+  { "id": "9", "label": "Table 9", "status": "free" },
+  { "id": "10", "label": "Table 10", "status": "free" },
+  { "id": "11", "label": "Table 11", "status": "free" },
+  { "id": "12", "label": "Table 12", "status": "free" }
+]

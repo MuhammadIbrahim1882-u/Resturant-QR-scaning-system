@@ -1,0 +1,5 @@
+node_modules/
+qr-codes/*.png
+npm-debug.log
+.DS_Store
+.env

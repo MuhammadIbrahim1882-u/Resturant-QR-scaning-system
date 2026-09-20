@@ -1,0 +1,82 @@
+[
+  {
+    "id": "m1",
+    "category": "Starters",
+    "name": "Crispy Onion Bhaji",
+    "description": "Spiced onion fritters, mint chutney",
+    "price": 5.50,
+    "available": true
+  },
+  {
+    "id": "m2",
+    "category": "Starters",
+    "name": "Grilled Halloumi",
+    "description": "Charred halloumi, pomegranate, honey drizzle",
+    "price": 6.75,
+    "available": true
+  },
+  {
+    "id": "m3",
+    "category": "Mains",
+    "name": "Butter Chicken",
+    "description": "Slow-cooked chicken in a rich tomato-butter sauce, served with rice",
+    "price": 13.90,
+    "available": true
+  },
+  {
+    "id": "m4",
+    "category": "Mains",
+    "name": "Grilled Salmon",
+    "description": "Lemon-herb salmon fillet, seasonal vegetables",
+    "price": 15.50,
+    "available": true
+  },
+  {
+    "id": "m5",
+    "category": "Mains",
+    "name": "Wild Mushroom Risotto",
+    "description": "Creamy arborio rice, wild mushrooms, parmesan",
+    "price": 12.25,
+    "available": true
+  },
+  {
+    "id": "m6",
+    "category": "Sides",
+    "name": "Garlic Naan",
+    "description": "Fresh baked, garlic butter",
+    "price": 3.00,
+    "available": true
+  },
+  {
+    "id": "m7",
+    "category": "Sides",
+    "name": "Skin-on Fries",
+    "description": "Rosemary salt",
+    "price": 3.50,
+    "available": true
+  },
+  {
+    "id": "m8",
+    "category": "Desserts",
+    "name": "Sticky Toffee Pudding",
+    "description": "Warm toffee sauce, vanilla ice cream",
+    "price": 6.00,
+    "available": true
+  },
+  {
+    "id": "m9",
+    "category": "Drinks",
+    "name": "Fresh Lime Soda",
+    "description": "Sweet or salted",
+    "price": 3.25,
+    "available": true
+  },
+  {
+    "id": "m10",
+    "category": "Drinks",
+    "name": "House Red / White Wine (glass)",
+    "description": "Ask staff for today's selection",
+    "price": 6.50,
+    "available": true
+  }
+]
