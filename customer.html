@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Menu · Order from your table</title>
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/customer.css" />
+</head>
+<body class="customer">
+
+  <!-- ===== No-table-selected guard ===== -->
+  <div id="noTableScreen" class="status-screen" hidden>
+    <div class="status-screen__icon">📵</div>
+    <h1 class="status-screen__title">No table found</h1>
+    <p class="status-screen__body">
+      This link is missing a table number. Please scan the QR code printed
+      on your table instead of opening this page directly.
+    </p>
+  </div>
+
+  <!-- ===== Menu browsing screen ===== -->
+  <div id="menuScreen" hidden>
+    <header class="menu-header">
+      <p class="menu-header__eyebrow">Order directly from your table</p>
+      <h1 class="menu-header__title">The Green&nbsp;Fig</h1>
+      <span class="menu-header__table">📍 <span id="tableLabel">Table</span></span>
+    </header>
+
+    <nav class="category-nav" id="categoryNav" aria-label="Menu categories"></nav>
+
+    <main id="menuSections"></main>
+
+    <div class="cart-bar" id="cartBar">
+      <div>
+        <div class="cart-bar__count" id="cartCount">0 items</div>
+        <div class="cart-bar__total" id="cartTotal">$0.00</div>
+      </div>
+      <button class="cart-bar__cta" id="openCartBtn" type="button">View order</button>
+    </div>
+  </div>
+
+  <!-- ===== Cart drawer ===== -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <div class="drawer" id="cartDrawer" role="dialog" aria-label="Your order">
+    <button class="drawer__close" id="closeDrawerBtn" type="button" aria-label="Close">✕</button>
+    <div class="drawer__handle"></div>
+    <h2 class="drawer__title">Your order</h2>
+    <div class="drawer__items" id="drawerItems"></div>
+    <div class="drawer__note">
+      <label for="orderNote" class="visually-hidden">Notes for the kitchen</label>
+      <textarea id="orderNote" placeholder="Notes for the kitchen (allergies, spice level...)"></textarea>
+    </div>
+    <div class="drawer__summary">
+      <span>Total</span>
+      <span id="drawerTotal">$0.00</span>
+    </div>
+    <button class="drawer__submit" id="submitOrderBtn" type="button" disabled>Send order to kitchen</button>
+  </div>
+
+  <!-- ===== Order status screen ===== -->
+  <div id="statusScreen" class="status-screen" hidden>
+    <div class="status-screen__icon">✅</div>
+    <h1 class="status-screen__title">Order sent!</h1>
+    <p class="status-screen__body">
+      Order <strong id="statusOrderId"></strong> is on its way to the kitchen.
+      This page updates automatically — no need to flag anyone down.
+    </p>
+    <span class="status-pill status-pill--received" id="statusPill">Received</span>
+    <div class="status-actions">
+      <button class="btn-secondary" id="requestBillBtn" type="button">Request the bill</button>
+      <button class="btn-secondary" id="orderMoreBtn" type="button">Order something else</button>
+    </div>
+  </div>
+
+  <script src="socket.io/socket.io.js"></script>
+  <script src="js/customer.js"></script>
+</body>
+</html>

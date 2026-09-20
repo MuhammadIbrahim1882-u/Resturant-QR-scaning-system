@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Admin · Restaurant QR Ordering System</title>
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/admin.css" />
+</head>
+<body class="admin">
+
+  <div class="admin-shell">
+    <aside class="admin-side">
+      <p class="admin-side__brand">The Green Fig</p>
+      <p class="admin-side__sub">Admin panel</p>
+      <nav class="admin-nav">
+        <a class="admin-nav__item is-active" data-tab="menu" href="#menu">🍽 Menu</a>
+        <a class="admin-nav__item" data-tab="tables" href="#tables">🪑 Tables</a>
+        <a class="admin-nav__item" data-tab="qr" href="#qr">▦ QR codes</a>
+      </nav>
+    </aside>
+
+    <main class="admin-main">
+
+      <!-- ===== MENU TAB ===== -->
+      <section id="tab-menu" class="tab-panel">
+        <div class="admin-header">
+          <div>
+            <h1 class="admin-header__title">Menu</h1>
+            <p class="admin-header__sub">Changes appear on customers' phones immediately.</p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <p class="panel__title">Add a menu item</p>
+          <div class="form-grid" id="menuForm">
+            <div class="field">
+              <label for="miCategory">Category</label>
+              <input id="miCategory" type="text" placeholder="e.g. Mains" />
+            </div>
+            <div class="field">
+              <label for="miName">Name</label>
+              <input id="miName" type="text" placeholder="Dish name" />
+            </div>
+            <div class="field">
+              <label for="miDesc">Description</label>
+              <input id="miDesc" type="text" placeholder="Short description" />
+            </div>
+            <div class="field">
+              <label for="miPrice">Price</label>
+              <input id="miPrice" type="number" min="0" step="0.01" placeholder="0.00" />
+            </div>
+            <button class="btn btn-primary" id="addMenuItemBtn" type="button">Add item</button>
+          </div>
+        </div>
+
+        <div class="panel">
+          <p class="panel__title">Current menu</p>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="menuTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ===== TABLES TAB ===== -->
+      <section id="tab-tables" class="tab-panel" hidden>
+        <div class="admin-header">
+          <div>
+            <h1 class="admin-header__title">Tables</h1>
+            <p class="admin-header__sub">See which tables are occupied or asking for the bill.</p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <p class="panel__title">Add a table</p>
+          <div class="form-grid">
+            <div class="field">
+              <label for="tblId">Table number / id</label>
+              <input id="tblId" type="text" placeholder="e.g. 13" />
+            </div>
+            <div class="field">
+              <label for="tblLabel">Label (optional)</label>
+              <input id="tblLabel" type="text" placeholder="e.g. Patio 1" />
+            </div>
+            <button class="btn btn-primary" id="addTableBtn" type="button">Add table</button>
+          </div>
+        </div>
+
+        <div class="panel">
+          <p class="panel__title">All tables</p>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Table</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="tablesTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ===== QR TAB ===== -->
+      <section id="tab-qr" class="tab-panel" hidden>
+        <div class="admin-header">
+          <div>
+            <h1 class="admin-header__title">QR codes</h1>
+            <p class="admin-header__sub">Print one per table. Scanning it opens that table's menu directly.</p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="base-url-bar">
+            <div class="field">
+              <label for="baseUrl">Site URL customers will scan to reach</label>
+              <input id="baseUrl" type="text" placeholder="https://your-restaurant-domain.com" />
+            </div>
+            <button class="btn btn-primary" id="genAllQrBtn" type="button">Generate all</button>
+          </div>
+          <p style="font-size:13px;color:var(--ink-dim);margin:0;">
+            Defaults to this browser's address. Replace it with your public domain (or your router's LAN IP,
+            e.g. <code>http://192.168.1.20:3000</code>) before printing codes for real tables.
+          </p>
+        </div>
+
+        <div class="panel">
+          <div class="qr-grid" id="qrGrid"></div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="socket.io/socket.io.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

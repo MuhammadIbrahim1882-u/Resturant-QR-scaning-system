@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kitchen Display</title>
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/kitchen.css" />
+</head>
+<body class="kitchen">
+
+  <header class="kds-header">
+    <h1 class="kds-header__title">Kitchen Display</h1>
+    <div class="kds-header__status">
+      <span class="status-dot" id="connDot"></span>
+      <span id="connLabel">Live</span>
+      <span class="kds-header__clock" id="clock"></span>
+    </div>
+  </header>
+
+  <div id="billBanner" class="bill-banner" hidden></div>
+
+  <main class="kds-board">
+    <section class="kds-column kds-column--received">
+      <div class="kds-column__head">
+        <span>New</span>
+        <span class="kds-count" id="countReceived">0</span>
+      </div>
+      <div class="kds-column__body" id="colReceived"></div>
+    </section>
+
+    <section class="kds-column kds-column--preparing">
+      <div class="kds-column__head">
+        <span>Preparing</span>
+        <span class="kds-count" id="countPreparing">0</span>
+      </div>
+      <div class="kds-column__body" id="colPreparing"></div>
+    </section>
+
+    <section class="kds-column kds-column--ready">
+      <div class="kds-column__head">
+        <span>Ready to serve</span>
+        <span class="kds-count" id="countReady">0</span>
+      </div>
+      <div class="kds-column__body" id="colReady"></div>
+    </section>
+  </main>
+
+  <script src="socket.io/socket.io.js"></script>
+  <script src="js/kitchen.js"></script>
+</body>
+</html>

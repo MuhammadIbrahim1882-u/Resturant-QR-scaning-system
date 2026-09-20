@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Restaurant QR Ordering System</title>
+<link rel="stylesheet" href="css/base.css" />
+<style>
+  body {
+    font-family: -apple-system, 'Inter', sans-serif;
+    background: #14161a;
+    color: #eef0f2;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .wrap { max-width: 420px; width: 100%; }
+  h1 { font-size: 22px; margin: 0 0 6px; }
+  p.sub { color: #8b909a; font-size: 14px; margin: 0 0 28px; }
+  .link-card {
+    display: block;
+    background: #1c1f24;
+    border: 1px solid #2a2e35;
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+  }
+  .link-card strong { display: block; font-size: 15px; margin-bottom: 3px; }
+  .link-card span { font-size: 13px; color: #8b909a; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Restaurant QR Ordering System</h1>
+    <p class="sub">Pick a screen. In real use, diners only ever reach the menu by scanning the QR code on their table.</p>
+    <a class="link-card" href="customer.html?table=1">
+      <strong>🍽️ Customer menu — Table 1</strong>
+      <span>What a diner sees after scanning their table's QR code</span>
+    </a>
+    <a class="link-card" href="kitchen.html">
+      <strong>🔥 Kitchen display</strong>
+      <span>Live incoming orders, by status</span>
+    </a>
+    <a class="link-card" href="admin.html">
+      <strong>⚙️ Admin panel</strong>
+      <span>Manage menu, tables and printable QR codes</span>
+    </a>
+  </div>
+</body>
+</html>
